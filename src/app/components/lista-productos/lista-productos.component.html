@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>PLATZI FAKE API</h1>
+    <ul>
+        @for (item of Productos$; track item.id)
+        {
+        <li>
+            <app-producto-template [producto]="item"></app-producto-template>
+        </li>
+
+        }
+    </ul>
+</div>
