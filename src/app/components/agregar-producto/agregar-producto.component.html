@@ -1,17 +1,20 @@
 <div class="container">
     <h1>Agregar producto</h1>
-    <form>
+    <form (ngSubmit)="agregarProducto()">
         <div class="mb-3">
             <label for="txtTitulo" class="form-label">Titulo</label>
-            <input type="text" class="form-control" id="txtTitulo" aria-describedby="emailHelp">
+            <input type="text" [(ngModel)]="producto.title" class="form-control" id="txtTitulo"
+                [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3">
             <label for="txtDescripcion" class="form-label">Descripción</label>
-            <input type="text" class="form-control" id="txtDescripcion">
+            <input type="text" class="form-control" [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="producto.description" id="txtDescripcion" required>
         </div>
         <div class="mb-3">
             <label for="txtPrecio" class="form-label">Precio</label>
-            <input type="number" class="form-control" id="txtPrecio">
+            <input type="number" [ngModelOptions]="{standalone: true}" class="form-control" id="txtPrecio"
+                [(ngModel)]="producto.price" required>
         </div>
 
         <button type="submit" class="btn btn-primary ">Submit</button>

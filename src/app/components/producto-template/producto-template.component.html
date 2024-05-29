@@ -1,9 +1,12 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">{{producto.title}}</h5>
-        <p class="card-text">{{producto.description}}</p>
-        <a class="btn btn-primary m-2">Ver</a>
-        <a [routerLink]="['/editar', producto.id]" class="btn btn-info m-2">Editar</a>
-        <a [routerLink]="['/eliminar', producto.id]" class="btn btn-danger m-2">Eliminar</a>
+        <img src="https://www.ceupe.com/images/easyblog_articles/4002/b2ap3_amp_lnea-de-productos.jpg"
+            class="card-img-top" alt="...">
+        <h2 class="card-title">{{producto.title}}</h2>
+        <p class="card-text">$ {{producto.price}}</p>
+        <div>
+            <a [routerLink]="['/editar', producto.id]" class="btn btn-info m-2">Editar</a>
+            <a [routerLink]="['/eliminar', producto.id]" class="btn btn-danger m-2">Eliminar</a>
+        </div>
     </div>
 </div>

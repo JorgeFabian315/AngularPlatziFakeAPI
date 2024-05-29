@@ -12,3 +12,10 @@ export interface Producto {
     "category": category,
     "images": [string]
 }
+export interface AgregarProducto {
+    "title": string,
+    "price": number,
+    "description": string,
+    "categoryId": number,
+    "images": [string]
+}
