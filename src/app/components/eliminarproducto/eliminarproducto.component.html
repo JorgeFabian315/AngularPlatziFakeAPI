@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    Confirmar Eliminación
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">¿Estás seguro de que deseas eliminar este ítem {{ProductoId}}?</h5>
+                    <p class="card-text">Esta acción no se puede deshacer.</p>
+                    <form action="/ruta-a-tu-endpoint-de-eliminacion" method="POST">
+                        <input type="hidden" name="item_id" value="ID_DEL_ITEM_A_ELIMINAR">
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-danger me-2">Eliminar</button>
+                            <a routerLink="/" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
