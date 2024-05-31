@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { AgregarProducto, Producto } from '../../interfaces/producto';
+import { AgregarProducto, EditarProducto, Producto } from '../../interfaces/producto';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,5 +20,13 @@ export class ProductosService {
   }
   deleteProducto(id: number): Observable<Producto> {
     return this.httpClient.delete<Producto>(this.url + id);
+  }
+
+  getById(id: number): Observable<Producto> {
+    return this.httpClient.get<Producto>(this.url + id);
+  }
+
+  putProducto(id: number, producto: EditarProducto): Observable<EditarProducto> {
+    return this.httpClient.put<Producto>(this.url + id, producto);
   }
 }

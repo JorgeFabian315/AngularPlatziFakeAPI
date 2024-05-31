@@ -1,20 +1,16 @@
 <div class="container">
-    <h1>Editar producto {{ProductoId}}</h1>
-    <form>
+    <h1>Editar producto</h1>
+    <form [formGroup]="productosForm" (submit)="onSubmit()">
         <div class="mb-3">
-            <label for="txtTitulo" class="form-label">Titulo</label>
-            <input type="text" class="form-control" id="txtTitulo" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="txtDescripcion" class="form-label">Descripción</label>
-            <input type="text" class="form-control" id="txtDescripcion">
+            <label class="form-label">Titulo</label>
+            <input type="text" class="form-control" formControlName="title">
         </div>
         <div class="mb-3">
             <label for="txtPrecio" class="form-label">Precio</label>
-            <input type="number" class="form-control" id="txtPrecio">
+            <input type="number" formControlName="price" class="form-control" id="txtPrecio">
         </div>
 
-        <button type="submit" class="btn btn-primary ">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!productosForm.valid">Submit</button>
         <a routerLink="/lista" routerLinkActive="router-link-active" class="btn btn-danger ms-4">Cancelar</a>
     </form>
 </div>

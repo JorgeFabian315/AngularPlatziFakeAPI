@@ -19,3 +19,8 @@ export interface AgregarProducto {
     "categoryId": number,
     "images": [string]
 }
+
+export interface EditarProducto {
+    "title": string,
+    "price": number,
+}
