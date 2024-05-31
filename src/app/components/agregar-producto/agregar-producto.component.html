@@ -5,14 +5,32 @@
             <label for="txtTitulo" class="form-label">Titulo</label>
             <input type="text" class="form-control" id="txtTitulo" formControlName="title" aria-describedby="emailHelp"
                 required>
+            @if(productosForm.get("title")?.hasError("required") && productosForm.get("title")?.touched){
+            <div class="alert alert-danger mt-3">El titulo es requerido</div>
+            }
         </div>
         <div class="mb-3">
             <label for="txtDescripcion" class="form-label">Descripción</label>
             <input type="text" class="form-control" formControlName="description" id="txtDescripcion" required>
+            @if(productosForm.get("description")?.hasError("required") && productosForm.get("description")?.touched){
+            <div class="alert alert-danger mt-3">La descripción es requerida</div>
+            }
         </div>
         <div class="mb-3">
             <label for="txtPrecio" class="form-label">Precio</label>
             <input type="number" class="form-control" id="txtPrecio" formControlName="price" required>
+            @if(productosForm.get("price")?.hasError("required") && productosForm.get("price")?.touched){
+            <div class="alert alert-danger mt-3">El precio es requerido</div>
+            }
+            @else if (productosForm.get("price")?.hasError("max"))
+            {
+            <div class="alert alert-danger mt-3">El precio no puede ser mayor a 100000</div>
+            }
+            @else if(productosForm.get("price")?.hasError("min"))
+            {
+            <div class="alert alert-danger mt-3">El precio no puede ser menor a 1</div>
+            }
+
         </div>
 
         <button type="submit" class="btn btn-primary" [disabled]="!productosForm.valid">Submit</button>

@@ -22,7 +22,8 @@ export class EditarProductoComponent implements OnInit {
 
   productosForm = new FormGroup({
     "title": new FormControl('', Validators.required),
-    "price": new FormControl(0, Validators.required),
+    "price": new FormControl(0, [Validators.required, Validators.max(1000000),
+    Validators.min(1)]),
   });
 
   constructor(private service: ProductosService, private toast: ToastrService, private router: Router) {
